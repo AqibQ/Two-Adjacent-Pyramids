@@ -1,0 +1,42 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Getting height
+    int Height;
+    do
+    {
+        Height = get_int("Height: ");
+    }
+    while (Height < 1 || Height > 8);
+
+    // For each row
+    for (int i = 1; i <= Height; i++)
+    {
+        // For each space
+        for (int s = 1; s <= Height - i; s++)
+        {
+            printf(" ");
+        }
+        
+        // For each coloumn
+        for (int j = 1; j <= i; j++)
+        {
+            // Print a brick for right aligned
+            printf("#");
+        }
+        
+        // For space
+        printf("  ");
+        
+        // For left aligned
+        for (int j = 1; j <= i; j++)
+        {
+            printf("#");
+        }
+        
+        // For each new line
+        printf("\n");
+    }
+}
